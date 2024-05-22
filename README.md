@@ -30,7 +30,7 @@ Before starting with the GrabFood Web Scraper project, ensure you have the follo
 ### Installation
 1. **Clone the Repository**:
     ```sh
-    git clone https://github.com/your-username/grabfood-web-scraper.git
+    git clone https://github.com/srashti09/grabfood-web-scraper.git
     cd grabfood-web-scraper
     ```
 
@@ -107,7 +107,7 @@ Contributions are welcome! Please open an issue or submit a pull request with yo
 ### Starting
 1. **Clone the Project**:
     ```sh
-    git clone https://github.com/your-username/grabfood-web-scraper.git
+    git clone https://github.com/srashti09/grabfood-web-scraper.git
     cd grabfood-web-scraper
     ```
 
