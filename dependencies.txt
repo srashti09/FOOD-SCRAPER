@@ -1,0 +1,7 @@
+Dependencies:
+
+axios:   Promise-based HTTP client for Node.js. Used for making HTTP requests to fetch HTML content from the GrabFood website.
+cheerio: Fast, flexible, and lean implementation of core jQuery for the server. Used for parsing HTML content and extracting specific data from the GrabFood website.
+fs:      Node.js file system module. Used for file operations, such as reading and writing data to files.
+path:    Node.js path module. Used for handling file paths and directory structures.
+zlib:    Node.js compression module. Used for gzip compression of extracted data.
