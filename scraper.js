@@ -1,6 +1,6 @@
-const axios = require('axios');
-const fs = require('fs');
-const cheerio = require('cheerio');
+import axios from 'axios';
+import fs from 'fs';
+import cheerio from 'cheerio';
 
 const url = "https://food.grab.com/sg/en/restaurants";
 const headers = {
