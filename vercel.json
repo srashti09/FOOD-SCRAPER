@@ -9,7 +9,7 @@
   "functions": {
     "scraper.js": {
       "maxDuration": 30,
-      "runtime": "nodejs20.x" 
+      
     }
   }
 }
