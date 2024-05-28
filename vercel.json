@@ -1,11 +1,5 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "scraper.js",
-      "use": "@vercel/node"
-    }
-  ],
   "routes": [
     {
       "src": "/(.*)",
@@ -14,7 +8,8 @@
   ],
   "functions": {
     "scraper.js": {
-      "maxDuration": 30 
+      "maxDuration": 30,
+      "runtime": "@vercel/node"
     }
   }
 }
