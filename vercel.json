@@ -3,13 +3,12 @@
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "scraper.js"
+      "dest": "/api/scraper.js"
     }
   ],
   "functions": {
-    "scraper.js": {
-      "maxDuration": 30
-      
+    "api/scraper.js": {
+      "maxDuration": 30000
     }
   }
 }
