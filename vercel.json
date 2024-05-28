@@ -3,7 +3,7 @@
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "/scraper.js"
+      "dest": "scraper.js"
     }
   ],
   "functions": {
