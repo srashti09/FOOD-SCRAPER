@@ -1,13 +1,12 @@
 {
   "name": "food_scraper",
   "version": "1.0.0",
-  "description": "",
+  "description": "Scrape data from GrabFood website using Node.js.",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
-    
   },
- 
   "type": "module",
   "keywords": [],
   "author": "",
