@@ -14,7 +14,7 @@ const MONGODB_URI = process.env.MONGODB_URI;
 const DATABASE_NAME = 'testDatabase';
 const COLLECTION_NAME = 'testCollection';
 
-async function scrapeAndStore() {
+export async function scrapeAndStore() {
     try {
         // Make the request using axios
         const response = await axios.get(url, { headers });
@@ -32,10 +32,7 @@ async function scrapeAndStore() {
                 const scriptContent = JSON.parse(scriptTag.html().trim());
 
                 // Connect to MongoDB
-                const client = new MongoClient(MONGODB_URI, {
-                    useNewUrlParser: true,
-                    useUnifiedTopology: true,
-                });
+                const client = new MongoClient(MONGODB_URI);
 
                 await client.connect();
                 console.log("Connected to MongoDB");
@@ -60,4 +57,5 @@ async function scrapeAndStore() {
     }
 }
 
+// Execute the function
 scrapeAndStore();
