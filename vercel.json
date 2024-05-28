@@ -8,7 +8,7 @@
   ],
   "functions": {
     "scraper.js": {
-      "maxDuration": 30,
+      "maxDuration": 30
       
     }
   }
