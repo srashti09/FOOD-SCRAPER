@@ -14,7 +14,7 @@ const MONGODB_URI = process.env.MONGODB_URI;
 const DATABASE_NAME = 'testDatabase';
 const COLLECTION_NAME = 'testCollection';
 
-export async function scrapeAndStore() {
+export default async function scrapeAndStore() {
     try {
         // Make the request using axios
         const response = await axios.get(url, { headers });
