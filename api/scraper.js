@@ -19,37 +19,30 @@ console.log("MONGODB_URI:", MONGODB_URI);  // Debugging line
 let client;
 
 async function connectToMongoDB() {
-    if (!client) {
-        client = new MongoClient(MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true });
-        await client.connect();
-        console.log("Connected to MongoDB");
+    try {
+        if (!client) {
+            client = new MongoClient(MONGODB_URI);
+            await client.connect();
+            console.log("Connected to MongoDB");
+        }
+        return client;
+    } catch (error) {
+        console.error("Error connecting to MongoDB:", error);
+        throw error; // Rethrow the error for proper error handling
     }
-    return client;
 }
 
 export default async function scrapeAndStore() {
     try {
-        // Make the request using axios
         const response = await axios.get(url, { headers });
-
-        // Check status code and proceed with parsing if successful
         if (response.status === 200) {
-            // Load HTML content into Cheerio
             const $ = cheerio.load(response.data);
-
-            // Find the script tag with id="__NEXT_DATA__"
             const scriptTag = $('script#__NEXT_DATA__').first();
-
             if (scriptTag.length > 0) {
-                // Extract the content within the script tag
                 const scriptContent = JSON.parse(scriptTag.html().trim());
-
-                // Connect to MongoDB
                 const client = await connectToMongoDB();
                 const db = client.db(DATABASE_NAME);
                 const collection = db.collection(COLLECTION_NAME);
-
-                // Insert data into MongoDB
                 await collection.insertOne(scriptContent);
                 console.log("Data inserted into MongoDB");
             } else {
@@ -60,6 +53,7 @@ export default async function scrapeAndStore() {
         }
     } catch (error) {
         console.error("Error:", error.message);
+        throw error; // Rethrow the error for proper error handling
     }
 }
 
